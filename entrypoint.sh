@@ -2,4 +2,4 @@
 ls -al
 echo "all"
 ls / -al
-echo foo
+echo too
