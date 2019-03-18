@@ -8,6 +8,6 @@ ENV NOTEBOOK_INFO=${NOTEBOOK_INFO:-'0.1.0'}
 COPY . .
 RUN pip install $PIP_PACKAGES && \
     apt-get install --no-install-recommends -y $OS_PACKAGES
-FROM scratch
-COPY --from=0 /bin/sh /bin/sh
+#FROM scratch
+#COPY --from=0 /bin/sh /bin/sh
 ENTRYPOINT ["/bin/sh", "-c" , "echo hello"]
