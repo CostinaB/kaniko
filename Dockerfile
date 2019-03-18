@@ -5,6 +5,7 @@ ARG OS_PACKAGES
 ENV OS_PACKAGES=${OS_PACKAGES:-'vim'}
 ARG NOTEBOOK_INFO
 ENV NOTEBOOK_INFO=${NOTEBOOK_INFO:-'0.1.0'}
+COPY . .
 RUN pip install $PIP_PACKAGES && \
     apt-get install --no-install-recommends -y $OS_PACKAGES
 FROM scratch
