@@ -8,6 +8,7 @@ ENV NOTEBOOK_INFO=${NOTEBOOK_INFO:-'0.1.0'}
 ARG NOTEBOOK_NAME
 ENV NOTEBOOK_NAME=${NOTEBOOK_NAME}
 COPY . .
+RUN chsh -s /bin/bash
 #RUN mv 
 RUN pip install $PIP_PACKAGES && \
     apt-get install --no-install-recommends -y $OS_PACKAGES
