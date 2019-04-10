@@ -13,5 +13,5 @@ RUN pip install $PIP_PACKAGES && \
     apt-get install --no-install-recommends -y $OS_PACKAGES
 RUN python ./script.py $NOTEBOOK_NAME
 RUN cd && cat /root/envs/bashEnv >> .bashrc
-RUN source .bashrc
+RUN . /root/.bashrc
 ENTRYPOINT ["jupyter", "nbconvert", "--inplace", "--allow-errors", "--execute", "/notebook.ipynb"]
